@@ -1,0 +1,19 @@
+# * * * * *  command to execute
+# │ │ │ │ │
+# │ │ │ │ └─── day of week (0 - 6) (0 to 6 are Sunday to Saturday, or use names; 7 is Sunday, the same as 0)
+# │ │ │ └──────── month (1 - 12)
+# │ │ └───────────── day of month (1 - 31)
+# │ └────────────────── hour (0 - 23)
+# └─────────────────────── min (0 - 59)
+
+
+
+########################################################################################
+# touch the file /Users/hilary/touchme.txt every minute
+########################################################################################
+* * * * * touch /Users/hilary/Documents/touchme.txt  >> /Users/hilary/Documents/cron.log 2>&1
+
+########################################################################################
+# Run the Archiver and Analysis for Project 01 at 01:00 each day
+########################################################################################
+0 1 * * * cd /Users/hilary/Documents/Archiver_project_01  && bash ODK_Archiver.sh > /Users/hilary/Documents/Archiver_project_01/Archiver_project_01.cron.log 2>&1 && cd /Users/hilary/Documents/Analyser_project_01/ &&  /usr/bin/Rscript /Users/hilary/Documents/Analyser_project_01/000_run_EDK0006_analysis.R > /Users/hilary/Documents/Analyser_project_01/Analyser_project_01.cron.log 2>&1 
