@@ -1,4 +1,4 @@
-#ODK Archiver User Guide
+# ODK Archiver User Guide
 
 This document provides instructions on how to set up an instance of the ODK Archiver system. The system can pull and then decrypt and export user defined forms using the ODK Briefcase CLI. ODK Archiver can be used as a standalone controller for the ODK Briefcase CLI, or can be automated using cron as explained [here](../03_crontabs/README.md).
 
