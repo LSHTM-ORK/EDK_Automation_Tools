@@ -16,4 +16,4 @@
 ########################################################################################
 # Run the Archiver and Analysis for Project 01 at 01:00 each day
 ########################################################################################
-0 1 * * * cd /Users/hilary/Documents/Archiver_project_01  && bash ODK_Archiver.sh > /Users/hilary/Documents/Archiver_project_01/Archiver_project_01.cron.log 2>&1 && cd /Users/hilary/Documents/Analyser_project_01/ &&  /usr/bin/Rscript /Users/hilary/Documents/Analyser_project_01/000_run_EDK0006_analysis.R > /Users/hilary/Documents/Analyser_project_01/Analyser_project_01.cron.log 2>&1 
+0 1 * * * cd /Users/hilary/Documents/Archiver_project_01  && bash ODK_Archiver.sh > /Users/hilary/Documents/Archiver_project_01/Archiver_project_01.cron.log 2>&1 && cd /Users/hilary/Documents/Analyser_project_01/ &&  /usr/bin/Rscript /Users/hilary/Documents/Analyser_project_01/ODK_Analyser.R > /Users/hilary/Documents/Analyser_project_01/Analyser_project_01.cron.log 2>&1 
