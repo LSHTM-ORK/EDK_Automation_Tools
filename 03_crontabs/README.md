@@ -4,7 +4,7 @@
 
 The time based scheduler `cron` is the basis for a simple system of automation that requires no additional software installation. Cron is controlled through a system file called the `crontab` which is essentially a text file that contains commands that specify the time at which a process should regularly occur, plus the nature of that process.
 
-In this example, we provide instructions for how to access and edit the crontab and to schedule tasks including the [ODK Briefcase archiver](../02_ODK_Briefcase_Archiver) and [ODK Analyser](../03_ODK_AnalyserR) scripts.
+In this example, we provide instructions for how to access and edit the crontab and to schedule tasks including the [ODK archiver](../01_ODK_Archiver) and [ODK Analyser](../02_ODK_Analyser) scripts.
 
 Commands to type in terminal are shown as code snippets
 Throughout the examples, we will assume that you are logged in as user `hilary` and that your working directories are in `/Users/hilary/Documents/`
