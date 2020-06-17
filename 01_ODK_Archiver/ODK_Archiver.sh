@@ -5,7 +5,7 @@
 #########################################################################################
 ODK_STORAGE_PATH="Data"
 ODK_EXPORT_PATH="Data/Output"
-URL="https://ork.lshtm.ac.uk/whocovidb/"
+URL="https://SERVER.URL.COM/project/"
 ODKUSERNAME="admin"
 PEM="keys/ODK.PRIVATE.KEY.pem"
 
@@ -73,9 +73,6 @@ for i in "${arr[@]}"
 			echo making new export
 			java -jar ODK-Briefcase-v1.17.3.jar -e -ed "$ODK_EXPORT_PATH"/  -ssm -sd "$ODK_STORAGE_PATH" -id "$FORM_ID" -f "$FORM_ID".csv -pf "$PEM"
 		
-			#move anything pulled today to a timestamped folder
-			echo moving instances to archive
-			
 			#make a backup of the CSV file
 			echo making backup copy of CSV file
 			cp "$ODK_EXPORT_PATH"/"$FORM_ID".csv "$ODK_STORAGE_PATH"/ODK\ Briefcase\ Storage/forms/"$FORM_NAME"/archive/"$PULLTIME2"/"$PULLTIME2".csv
