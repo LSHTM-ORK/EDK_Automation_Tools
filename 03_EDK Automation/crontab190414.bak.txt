@@ -1,0 +1,31 @@
+ #* * * * *  command to execute
+#│ │ │ │ │
+#│ │ │ │ └─── day of week (0 - 6) (0 to 6 are Sunday to Saturday, or use names; 7 is Sunday, the same as 0)
+#│ │ │ └──────── month (1 - 12)
+#│ │ └───────────── day of month (1 - 31)
+#│ └────────────────── hour (0 - 23)
+#└─────────────────────── min (0 - 59)
+
+# Add explicit path to any folder and explicit path to any command including interpreter - i.e. don't use "./run.sh" but "sh run.sh"
+# make all R scripts etc executable
+
+#touch a /Users/chrissyhroberts/touchme.txt file every minute - test crontab is working
+* * * * * touch /Users/chrissyhroberts/touchme.txt
+
+
+#run EDK0004/7 downloader every day at 0500
+0 5 * * * cd /Users/chrissyhroberts/Documents/EDK0004/001_Local_analysis && sh EDK0004.download.sh >> /Users/chrissyhroberts/Documents/EDK0004/001_Local_analysis/EDK0004.cron.log 2>&1 && /usr/local/bin/mutt -s "EDK0004 DRC Reports" < report.txt -- chrissyhroberts@yahoo.co.uk
+
+
+#run EDK0003 downloader handler at 0350
+50 3 * * * cd /Users/chrissyhroberts/Documents/EDK0003  && sh EDK0003.download.sh  >> /Users/chrissyhroberts/Documents/EDK0003/EDK0003.cron.log 2>&1 && /usr/local/bin/mutt -a /Users/chrissyhroberts/Documents/EDK0003/EDK0003.csv.files.tar.gz.enc -s "EDK0003 Rwanda Reports" < report.txt -- chrissyhroberts@yahoo.co.uk michael.marks@lshtm.ac.uk
+
+#run EDK0005 downloader handler at 0400
+0 4 * * * cd /Users/chrissyhroberts/Documents/EDK0005  && sh EDK0005.download.sh  >> /Users/chrissyhroberts/Documents/EDK0005/EDK0005.cron.log 2>&1 && /usr/local/bin/mutt -a /Users/chrissyhroberts/Documents/EDK0005/EDK0005.csv.files.tar.gz.enc -s "EDK0005 Uganda Reports" < report.txt -- chrissyhroberts@yahoo.co.uk michael.marks@lshtm.ac.uk
+
+#run EDK0006 downloader handler at 0410
+10 4 * * * cd /Users/chrissyhroberts/Documents/EDK0006  && sh EDK0006.download.sh  >> /Users/chrissyhroberts/Documents/EDK0006/EDK0006.cron.log 2>&1 && /usr/local/bin/mutt -a /Users/chrissyhroberts/Documents/EDK0006/EDK0006.csv.files.tar.gz.enc -s "EDK0006 South Sudan Reports" < report.txt -- chrissyhroberts@yahoo.co.uk michael.marks@lshtm.ac.uk
+
+#run Islay MacTaggart Vanuatu study  downloader handler at 0415
+37 11 * * * cd /Users/chrissyhroberts/Documents/islay_vanuatu && sh islay_vanuatu.download.sh >> /Users/chrissyhroberts/Documents/islay_vanuatu/cron.log 2>&1     &&     /usr/local/bin/Rscript 000000_Islay_Vanuatu_Analysis.R >> /Users/chrissyhroberts/Documents/islay_vanuatu/cron.log 2>&1     &&     sh islay_vanuatu.download_part2.sh >> /Users/chrissyhroberts/Documents/islay_vanuatu/cron.log 2>&1    &&     /usr/local/bin/mutt -a /Users/chrissyhroberts/Documents/islay_vanuatu/islay_vanuatu.csv.files.tar.gz -s "Vanuatu WaterWomen Survey Reports" < report.txt -- chrissyhroberts@yahoo.co.uk islay.mactaggart@lshtm.ac.uk >> /Users/chrissyhroberts/Documents/islay_vanuatu/cron.log 2>&1
+
